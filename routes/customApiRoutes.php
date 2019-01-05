@@ -10,7 +10,6 @@ $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
     $api->group(['namespace'=> 'App\Api\Controllers','middleware' => 'api.auth'],function($router){
         $router->get('/','PostsController@index');
-        $router->post('me', 'AuthController@me');
     });
     $api->group(['namespace'=> 'App\Api\Controllers','middleware' => 'api.auth','prefix' => 'auth'],function($router){
        $router->post('login', 'AuthController@login');
